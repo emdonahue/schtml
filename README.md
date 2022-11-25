@@ -29,3 +29,8 @@ The `css` function accepts a list of lists, where each sublist begins with a sym
 (css '(((p > span) font-weight bold))) ; p > span{ font-weight: bold; }
 (css '((.border border (1px solid black)))) ; .border{ border: 1px solid black }
 ```
+
+### Running the Code
+Tests can be run with `chezscheme --libdirs src/ --script test/test.scm
+
+For a simple website generator, import the library, generate the HTML/CSS string, and write it to the appropriate files with `(with-output-to-file "index.html" (lambda () (display (my-html-function))) 'replace)`
