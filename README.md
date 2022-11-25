@@ -1,7 +1,7 @@
 # SCHTML
 A Scheme library for generating raw HTML and CSS
 
-SCHTML provides a collection of scheme funcitons that simplify the generation of raw HTML and CSS strings. It was written and debugged in Chez scheme, but may work in other dialects.
+SCHTML provides a collection of scheme funcitons that simplify the generation of raw HTML and CSS strings. It was written and debugged in Guile scheme.
 
 ## API
 
@@ -31,6 +31,6 @@ The `css` function accepts a list of lists, where each sublist begins with a sym
 ```
 
 ### Running the Code
-Tests can be run with `chezscheme --libdirs src/ --script test/test.scm
+Tests can be run with `guile -L . test.scm`
 
 For a simple website generator, import the library, generate the HTML/CSS string, and write it to the appropriate files with `(with-output-to-file "index.html" (lambda () (display (my-html-function))) 'replace)`
