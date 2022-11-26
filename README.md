@@ -18,7 +18,7 @@ The `html` function accepts a list representing a tree of HTML nodes. The first 
 (html '(p.article "lorem ipsum")) ; <p class="article">lorem ipsum</p>
 (html '(p.article.bold "lorem ipsum")) ; <p class="article bold">lorem ipsum</p>
 (html '(p (span "lorem") " " (span "ipsum"))) ; <p><span>lorem</span> <span>ipsum</span></p>
-(html '((p style (font-weight bold)) "lorem ipsum")) ; <p style="font-weight: bold;">lorem ipsum</p>
+(html '((p style (font-weight bold)) "lorem ipsum")) ; <p style="font-weight: bold;">lorem ipsum</p>>
 ```
 
 ### CSS
@@ -34,6 +34,6 @@ The `css` function accepts a list of lists, where each sublist begins with a sym
 ```
 
 ### Running the Code
-Tests can be run with `guile -L . test.scm`
+Tests can be run with `raco test tests.rkt`
 
-For a simple website generator, import the library, generate the HTML/CSS string, and write it to the appropriate files with `(with-output-to-file "index.html" (lambda () (display (my-html-function))) 'replace)`
+For a simple website generator, import the library, generate the HTML/CSS string, and write it to the appropriate files with `(with-output-to-file "index.html" (lambda () (display (my-html-function))))`
