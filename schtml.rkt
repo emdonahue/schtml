@@ -1,14 +1,11 @@
 #lang racket
 (provide html css)
 
-(define html
-  (lambda hs
-    (apply string-append
-	   (map render-html hs))))
-
-(define (render-html h)
-  (if (list? h) (open-close-tag (car h) (cdr h))
-      (->string h)))
+(define (html h [doctype #f])
+  (string-append
+   (if doctype "<!DOCTYPE html>" "")
+   (if (list? h) (open-close-tag (car h) (cdr h))
+       (->string h))))
 
 (define (open-close-tag tag body)
   (let* ([name-class (string-split (head tag) #rx"[.]")]

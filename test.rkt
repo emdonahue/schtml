@@ -11,7 +11,7 @@
 (check-equal? (html '(p.article.main "lorem ipsum")) "<p class=\"article main\">lorem ipsum</p>")
 (check-equal? (html '((p class (bold italics)) "lorem ipsum")) "<p class=\"bold italics\">lorem ipsum</p>")
 (check-equal? (html '(p (span "lorem") " " (span "ipsum"))) "<p><span>lorem</span> <span>ipsum</span></p>")
-(check-equal? (html "<!DOCTYPE html>" '(html (body "lorem ipsum"))) "<!DOCTYPE html><html><body>lorem ipsum</body></html>")
+(check-equal? (html '(html (body "lorem ipsum")) #t) "<!DOCTYPE html><html><body>lorem ipsum</body></html>")
 
 (check-equal? (css '((.bold font-weight bold))) ".bold{font-weight:bold;}")
 (check-equal? (css '((.bold font-weight bold) (.italics font-style italic))) ".bold{font-weight:bold;}.italics{font-style:italic;}")
