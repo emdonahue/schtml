@@ -47,6 +47,7 @@
    [(symbol? s) (symbol->string s)]
    [(number? s) (number->string s)]
    [(list? s) (string-join (map ->string s))]
+   [(path? s) (path->string s)]
    [else s]))
 
 #;(define (string-join delim strs)
